@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Green Ethics – Interactive Ethical Dilemma Demo</title>
+<style>
+body {font-family: Arial, sans-serif; background-color: #f7fdf7; color: #333; margin:0; padding:0; line-height:1.6;}
+header {padding:20px; text-align:center; background-color:#e6f4e6;}
+h1 {color:#256029; margin:0;}
+.container {max-width:900px; margin:auto; padding:20px;}
+img {max-width:100%; border-radius:8px; margin:10px 0;}
+.card {background-color:#fff; border-radius:8px; box-shadow:0 2px 4px rgba(0,0,0,0.1); padding:20px; margin-bottom:20px;}
+.consequence {display:none; margin-top:10px;}
+.show-button {background-color:#256029; color:#fff; border:none; padding:10px 15px; border-radius:6px; cursor:pointer; font-size:1rem;}
+.show-button:focus {outline:none;}
+</style>
+<script>
+function toggle(id, btn) {
+ var elem = document.getElementById(id);
+ if (elem.style.display === 'block') {
+   elem.style.display = 'none';
+   btn.textContent = 'View Consequences';
+ } else {
+   elem.style.display = 'block';
+   btn.textContent = 'Hide Consequences';
+ }
+}
+</script>
+</head>
+<body>
+<header>
+<h1>Ethical Dilemma: When the Greenest Solution Hurts People</h1>
+<p>Artificial intelligence is rapidly reshaping environmental consulting. Advanced systems optimise project locations for sustainability, but sometimes overlook human impact.</p>
+</header>
+<div class="container">
+<img src="ai_overview.png" alt="AI in environmental work">
+<section class="card">
+<h2>Scenario</h2>
+<p>Imagine you are an environmental consultant working for a company that uses an AI‑powered system to optimise project locations for sustainability. The AI analyses factors like carbon‑reduction potential, solar exposure, land costs, and infrastructure readiness. Based on these calculations, it recommends building a solar energy facility in a low‑income neighbourhood on the outskirts of the city.</p>
+<p>On paper, this site is the most environmentally efficient: low land‑acquisition cost, high emission savings, and fast implementation. However, the community living there consists of vulnerable groups—elderly residents, long‑term families, and people who may not have the means to relocate. The AI, while technically accurate, does not consider social justice or human impact.</p>
+<p>You are now faced with a difficult decision: should you accept the AI’s recommendation and contribute to a greener outcome at the cost of displacing a community? Or should you oppose it and risk losing both the project and your job, while potentially slowing down climate progress?</p>
+</section>
+<section class="card">
+<h2>Option 1: Follow the AI’s Plan</h2>
+<img src="excavator_and_solar.png" alt="Demolish & build">
+<p>Demolish the old neighbourhood and construct the solar installation exactly where the algorithm recommends.</p>
+<button class="show-button" onclick="toggle('cons-left', this)">View Consequences</button>
+<div id="cons-left" class="consequence">
+<img src="company_profit_vs_displaced.png" alt="Profit vs displacement">
+<p>The company’s stock price soars and emission targets are smashed, but hundreds of residents are uprooted, communities fracture, and social unrest grows.</p>
+</div>
+</section>
+<section class="card">
+<h2>Option 2: Protect the Community</h2>
+<img src="happy_neighbourhood.png" alt="Happy neighbourhood">
+<p>Challenge the AI recommendation, keep the neighbourhood intact, and seek alternative sites or mitigation strategies.</p>
+<button class="show-button" onclick="toggle('cons-right', this)">View Consequences</button>
+<div id="cons-right" class="consequence">
+<img src="happy_community_vs_jobloss.png" alt="Community vs job loss">
+<p>Residents thrive and the neighbourhood’s heritage is preserved, but you are dismissed for delaying the project, and another consultant is hired to pursue the original plan anyway.</p>
+</div>
+</section>
+<section class="card">
+<h2>What does the Code of Ethics say?</h2>
+<p><strong>The EIANZ Code of Ethics reminds environmental consultants to:</strong></p>
+<ul>
+<li>Acknowledge and value the rights and interests of Indigenous Peoples in environmental decisions, especially through the inclusion of traditional knowledge.</li>
+<li>Advocate for both cultural and natural integrity, not just economic efficiency.</li>
+<li>Promote the involvement of local communities in decisions that affect environmental values.</li>
+</ul>
+<p>These aren’t just ideals — they are obligations. Ignoring them means violating the standards of our profession.</p>
+</section>
+</div>
+</body>
+</html>
